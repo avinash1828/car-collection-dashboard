@@ -59,11 +59,11 @@ const Browse = () => {
       );
     }
     
-    if (searchParams.make) {
+    if (searchParams.make && searchParams.make !== "all-makes") {
       results = results.filter((car) => car.make === searchParams.make);
     }
     
-    if (searchParams.year) {
+    if (searchParams.year && searchParams.year !== "all-years") {
       results = results.filter((car) => car.year.toString() === searchParams.year);
     }
     

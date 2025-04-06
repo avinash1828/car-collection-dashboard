@@ -64,7 +64,7 @@ export const CarSearch = ({ onSearch, makes, years }: CarSearchProps) => {
               <SelectValue placeholder="All Makes" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Makes</SelectItem>
+              <SelectItem value="all-makes">All Makes</SelectItem>
               {makes.map((make) => (
                 <SelectItem key={make} value={make}>
                   {make}
@@ -80,7 +80,7 @@ export const CarSearch = ({ onSearch, makes, years }: CarSearchProps) => {
               <SelectValue placeholder="All Years" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Years</SelectItem>
+              <SelectItem value="all-years">All Years</SelectItem>
               {years.map((year) => (
                 <SelectItem key={year} value={year}>
                   {year}
