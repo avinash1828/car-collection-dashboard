@@ -5,11 +5,10 @@ metadata:
   name: car-collection-app-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - host: car-collection.example.com  # Replace with your actual domain
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix
@@ -18,8 +17,3 @@ spec:
             name: car-collection-app-service
             port:
               number: 80
-  # Uncomment to add TLS when you have certificates
-  # tls:
-  # - hosts:
-  #   - car-collection.example.com
-  #   secretName: car-collection-tls
