@@ -1,0 +1,12 @@
+
+version: '3.8'
+
+services:
+  car-collection-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: car-collection-app
+    ports:
+      - "8080:80"
+    restart: unless-stopped

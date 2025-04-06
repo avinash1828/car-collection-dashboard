@@ -1,73 +1,98 @@
-# Welcome to your Lovable project
 
-## Project info
+# Car Collection Dashboard
 
-**URL**: https://lovable.dev/projects/d1b4fbac-6a79-44a5-9c64-f5ad78d01ecc
+A web application for car enthusiasts to keep track of their car collections. Users can sign up, login, and manage their car collections with a beautiful and responsive interface.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- User authentication (signup, login, forgot password)
+- Dashboard with collection statistics
+- Search and filter car catalog
+- Add/remove cars from collection
+- Responsive design for all devices
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d1b4fbac-6a79-44a5-9c64-f5ad78d01ecc) and start prompting.
+- React with TypeScript
+- Tailwind CSS for styling
+- ShadCN UI for components
+- Vite for development and building
+- Docker for containerization
 
-Changes made via Lovable will be committed automatically to this repo.
+## Running with Docker
 
-**Use your preferred IDE**
+This application is containerized for easy deployment and consistent environments.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Docker
+- Docker Compose (optional, for easier management)
 
-Follow these steps:
+### Using Docker Compose
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. Clone the repository
+2. Navigate to the project directory
+3. Run the following command:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+docker-compose up -d
 ```
 
-**Edit a file directly in GitHub**
+This will build the Docker image and start the container in detached mode. The application will be available at `http://localhost:8080`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Using Docker directly
 
-**Use GitHub Codespaces**
+1. Clone the repository
+2. Navigate to the project directory
+3. Build the Docker image:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+docker build -t car-collection-app .
+```
 
-## What technologies are used for this project?
+4. Run the Docker container:
 
-This project is built with:
+```bash
+docker run -d -p 8080:80 --name car-collection-app car-collection-app
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The application will be available at `http://localhost:8080`.
 
-## How can I deploy this project?
+## Local Development
 
-Simply open [Lovable](https://lovable.dev/projects/d1b4fbac-6a79-44a5-9c64-f5ad78d01ecc) and click on Share -> Publish.
+### Prerequisites
 
-## Can I connect a custom domain to my Lovable project?
+- Node.js (v14 or higher)
+- npm or yarn
 
-Yes it is!
+### Installation
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Clone the repository
+2. Navigate to the project directory
+3. Install dependencies:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```bash
+npm install
+# or
+yarn install
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+The application will be available at `http://localhost:8080`.
+
+## Deployment Considerations
+
+For production deployment, consider:
+
+- Setting up proper authentication backend
+- Configuring a database for persistent storage
+- Setting up a reverse proxy for HTTPS
+- Implementing API rate limiting
+- Setting up monitoring and logging
